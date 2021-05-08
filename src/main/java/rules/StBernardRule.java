@@ -21,6 +21,6 @@ public class StBernardRule {
 
     @Action
     public void printStBernardRule(@Fact("dog")Dog dog) {
-        System.out.println("собака №" + dog.getId() + ",порода - кокер-спаниель");
+        System.out.println("собака №" + dog.getId() + ",порода - кокер-сенбернар");
     }
 }

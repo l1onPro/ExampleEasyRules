@@ -21,6 +21,6 @@ public class IrishSetterRule {
 
     @Action
     public void printIrishSetterRule(@Fact("dog")Dog dog) {
-        System.out.println("собака №" + dog.getId() + ",порода - кокер-спаниель");
+        System.out.println("собака №" + dog.getId() + ",порода - ирландский сеттер");
     }
 }
