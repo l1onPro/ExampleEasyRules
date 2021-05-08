@@ -15,7 +15,7 @@ public class Main {
     public static void main(String[] args) {
         // create a rules engine
         RulesEngineParameters parameters = new RulesEngineParameters().skipOnFirstAppliedRule(true);
-        RulesEngine fizzBuzzEngine = new DefaultRulesEngine(parameters);
+        RulesEngine dogEngine = new DefaultRulesEngine(parameters);
 
         // create rules
         Rules rules = new Rules();
@@ -30,7 +30,7 @@ public class Main {
         rules.register(new KoliRule());
 
 
-        //Example create god
+        //Example create dog
         Dog dogExample = Dog.newBuilder(0)
                 .setPersonality(Personality.friendly)
                 .setTypeHair(TypeLengths.longType)
@@ -52,7 +52,7 @@ public class Main {
         // fire rules
         Facts facts = new Facts();
         facts.put("dog", kolli);
-        fizzBuzzEngine.fire(rules, facts);
+        dogEngine.fire(rules, facts);
         System.out.println();
     }
 }
