@@ -1,3 +1,4 @@
+import model.Colors;
 import model.Dog;
 import model.Personality;
 import model.TypeLengths;
@@ -7,6 +8,8 @@ import org.jeasy.rules.api.RulesEngine;
 import org.jeasy.rules.core.DefaultRulesEngine;
 import org.jeasy.rules.core.RulesEngineParameters;
 import rules.*;
+
+import java.awt.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -36,6 +39,8 @@ public class Main {
                 .setTypeEars(TypeLengths.shortType)
                 .setTypeBody(TypeLengths.longType)
                 .setWeight(40)
+                .setColorHair(Colors.red)
+                .setColorMarkings(Colors.snow_white)
                 .build();
 
         Dog kolli = Dog.newBuilder(0)
@@ -49,7 +54,6 @@ public class Main {
         facts.put("dog", kolli);
         fizzBuzzEngine.fire(rules, facts);
         System.out.println();
-
     }
 }
 

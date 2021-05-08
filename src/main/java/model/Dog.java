@@ -9,6 +9,8 @@ public class Dog {
     private TypeLengths typeBody;           //тело
     private int weight;                     //вес
     private Personality personality;        //характер
+    private Colors colorHair;               //окрас
+    private Colors colorMarkings;           //отметины
 
     public Dog(long id) {
         this.id = id;
@@ -67,6 +69,16 @@ public class Dog {
             Dog.this.weight = weight;
             return this;
         }
+
+        public Builder setColorHair(Colors colorHair) {
+            Dog.this.colorHair = colorHair;
+            return this;
+        }
+
+        public Builder setColorMarkings(Colors colorMarkings) {
+            Dog.this.colorMarkings = colorMarkings;
+            return this;
+        }
     }
 
     public long getId() {
@@ -75,6 +87,22 @@ public class Dog {
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    public Colors getColorHair() {
+        return colorHair;
+    }
+
+    public void setColorHair(Colors colorHair) {
+        this.colorHair = colorHair;
+    }
+
+    public Colors getColorMarkings() {
+        return colorMarkings;
+    }
+
+    public void setColorMarkings(Colors colorMarkings) {
+        this.colorMarkings = colorMarkings;
     }
 
     public Personality getPersonality() {
