@@ -1,4 +1,5 @@
 import model.Dog;
+import model.Personality;
 import model.TypeLengths;
 import org.jeasy.rules.api.Facts;
 import org.jeasy.rules.api.Rules;
@@ -25,24 +26,29 @@ public class Main {
         rules.register(new GrandVendeeGriffonRule());
         rules.register(new KoliRule());
 
+
+        //Example create god
+        Dog dogExample = Dog.newBuilder(0)
+                .setPersonality(Personality.friendly)
+                .setTypeHair(TypeLengths.longType)
+                .setHeight(59)
+                .setTypeHair(TypeLengths.longType)
+                .setTypeEars(TypeLengths.shortType)
+                .setTypeBody(TypeLengths.longType)
+                .setWeight(40)
+                .build();
+
+        Dog kolli = Dog.newBuilder(0)
+                .setTypeHair(TypeLengths.longType)
+                .setHeight(59)
+                .setTypeEars(TypeLengths.shortType)
+                .build();
+
         // fire rules
         Facts facts = new Facts();
-        facts.put("dog", new Dog(0, TypeLengths.shortType, 20, TypeLengths.shortType));
+        facts.put("dog", kolli);
         fizzBuzzEngine.fire(rules, facts);
         System.out.println();
-
-        facts.put("dog", new Dog(1, TypeLengths.shortType, 51, TypeLengths.shortType));
-        fizzBuzzEngine.fire(rules, facts);
-        System.out.println();
-
-        facts.put("dog", new Dog(2, TypeLengths.shortType, 20, TypeLengths.longType, TypeLengths.longType));
-        fizzBuzzEngine.fire(rules, facts);
-        System.out.println();
-
-        facts.put("dog", new Dog(3, TypeLengths.shortType, 51, TypeLengths.longType, TypeLengths.longType));
-        fizzBuzzEngine.fire(rules, facts);
-        System.out.println();
-
 
     }
 }

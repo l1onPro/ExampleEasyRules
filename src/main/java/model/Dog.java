@@ -10,42 +10,63 @@ public class Dog {
     private int weight;                     //вес
     private Personality personality;        //характер
 
-    public Dog(long id, TypeLengths typeHair, int height, TypeLengths typeTail) {
+    public Dog(long id) {
         this.id = id;
-        this.typeHair = typeHair;
-        this.height = height;
-        this.typeTail = typeTail;
     }
 
-    public Dog(long id, TypeLengths typeHair, int height, TypeLengths typeTail, TypeLengths typeEars) {
-        this.id = id;
-        this.typeHair = typeHair;
-        this.height = height;
-        this.typeTail = typeTail;
-        this.typeEars = typeEars;
+    public static Builder newBuilder(long id) {
+        return new Dog(id).new Builder();
     }
 
-    public Dog(long id, TypeLengths typeHair, int height, TypeLengths typeTail, TypeLengths typeEars, TypeLengths typeBody) {
-        this.id = id;
-        this.typeHair = typeHair;
-        this.height = height;
-        this.typeTail = typeTail;
-        this.typeEars = typeEars;
-        this.typeBody = typeBody;
-    }
+    public class Builder {
 
-    public Dog(long id, TypeLengths typeHair, int height, int weight) {
-        this.id = id;
-        this.typeHair = typeHair;
-        this.height = height;
-        this.weight = weight;
-    }
+        private Builder(){
 
-    public Dog(long id, TypeLengths typeHair, int height, Personality personality) {
-        this.id = id;
-        this.typeHair = typeHair;
-        this.height = height;
-        this.personality = personality;
+        }
+
+        public Dog build() {
+            return Dog.this;
+        }
+
+        public Builder setId(long id) {
+            Dog.this.id = id;
+            return this;
+        }
+
+        public Builder setPersonality(Personality personality) {
+            Dog.this.personality = personality;
+            return this;
+        }
+
+        public Builder setTypeHair(TypeLengths typeHair) {
+            Dog.this.typeHair = typeHair;
+            return this;
+        }
+
+        public Builder setHeight(int height) {
+            Dog.this.height = height;
+            return this;
+        }
+
+        public Builder setTypeTail(TypeLengths typeTail) {
+            Dog.this.typeTail = typeTail;
+            return this;
+        }
+
+        public Builder setTypeEars(TypeLengths typeEars) {
+            Dog.this.typeEars = typeEars;
+            return this;
+        }
+
+        public Builder setTypeBody(TypeLengths typeBody) {
+            Dog.this.typeBody = typeBody;
+            return this;
+        }
+
+        public Builder setWeight(int weight) {
+            Dog.this.weight = weight;
+            return this;
+        }
     }
 
     public long getId() {
