@@ -5,8 +5,7 @@ import org.jeasy.rules.api.Rules;
 import org.jeasy.rules.api.RulesEngine;
 import org.jeasy.rules.core.DefaultRulesEngine;
 import org.jeasy.rules.core.RulesEngineParameters;
-import rules.EnglishBulldogRule;
-import rules.HoundRule;
+import rules.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -18,6 +17,13 @@ public class Main {
         Rules rules = new Rules();
         rules.register(new EnglishBulldogRule());
         rules.register(new HoundRule());
+        rules.register(new ChihuahuaRule());
+        rules.register(new GreatDaneRule());
+        rules.register(new FoxhoundRule());
+        rules.register(new CockerSpanielRule());
+        rules.register(new IrishSetterRule());
+        rules.register(new GrandVendeeGriffonRule());
+        rules.register(new KoliRule());
 
         // fire rules
         Facts facts = new Facts();
