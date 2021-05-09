@@ -28,6 +28,7 @@ public class Main {
         rules.register(new IrishSetterRule());
         rules.register(new GrandVendeeGriffonRule());
         rules.register(new KoliRule());
+        rules.register(new NothingRule());
 
 
         //Example create dog
