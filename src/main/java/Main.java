@@ -27,7 +27,9 @@ public class Main {
         rules.register(new CockerSpanielRule());
         rules.register(new IrishSetterRule());
         rules.register(new GrandVendeeGriffonRule());
-        rules.register(new KoliRule());
+        rules.register(new IrishWolfhoundRule());
+        rules.register(new NewfoundlandRule());
+        rules.register(new StBernardRule());
         rules.register(new NothingRule());
 
 
